@@ -213,6 +213,103 @@ let userInfo2 = (name:"why",age:18,height:1.88)
 
 let (name,age,height) = ("why",18,1.88)
 
+/*函数*/
+//1.没有参数和返回值
+func about()->(){
+    
+}
+//2.有参数或者返回值
+func about2(num : Int)->() {
+    
+}
+func about3()->(String) {
+    return "ddds"
+}
+//3.有参数和返回值
+func about4(num :Int)->(String) {
+    return "ddd"
+}
+//4.函数的内部参数和外部参数
+func about5(num1 num1 : Int, num2 : Int)->Int {
+
+   return num1 + num2
+}
+
+let bu : Int = about5(num1: 20, num2: 30)
+//5.方法重载,函数名字相同但是参数不同
+func about5(n1 n1 : Int)->Int {
+    return n1
+}
+about5(n1: 6)
+//6.默认参数
+func keys(ab : Int = 20)->Int {
+    return ab
+}
+keys()
+//7.可变参数
+func abo(abc : Int...)->Int {
+    var total : Int = 0
+    for i in abc {
+        total = total + i
+    }
+    return total
+}
+abo(20,20,20)
+//8.引用类型
+//交换两个数的大小
+var number1 : Int = 20
+var number2 : Int = 30
+func swap(var num1 num1 : Int, var num2 : Int) {
+    var temp : Int = 0
+    temp = num1
+    num1 = num2
+    num2 = temp
+
+}
+swap(num1: number1, num2: number2)
+number1
+number2
+func swap(inout num1 num1 : Int, inout num2 : Int) {
+    var temp : Int = 0
+    temp = num1
+    num1 = num2
+    num2 = temp
+    
+}
+
+swap(num1: &number1, num2: &number2)
+number2
+number1
+
+/*类的使用*/
+class student : NSObject {
+    var age : Int = 0
+    var meter : Int = 0
+//    计算属性
+    var mi : Int {
+        get {
+            return age * meter
+        }
+        set {
+            self.mi = newValue
+        }
+    }
+    var name : String?
+//    类属性
+    static var height : Int = 0
+}
+let stu = student()
+stu.age = 20
+stu.meter = 30
+print(stu.age)
+stu.name = "rui"
+if let tempName = stu.name{
+    print(tempName)
+}
+print(stu.mi)
+stu.mi = 30
+
+
 
 
 
